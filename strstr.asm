@@ -3,11 +3,10 @@ global strstr
 section .text
 
 strstr:
-    mov rbx, 0 ; iterator for rdi
-    mov rcx, 0 ; iterator for rsi
+    mov rbx, 0
+    mov rcx, 0
 
     mov rax, 0
-    mov rdx, 0
 
     mov r8, 0
 
@@ -21,8 +20,9 @@ retnull:
     ret
 
 retfind:
-    mov rax, r8
-    ; add rdi, r8
+    add rdi, r8
+    mov rax, rdi
+    add rax, 1
     ret
 
 retall:
@@ -49,6 +49,7 @@ loop:
         mov rcx, 0
         mov r8, rbx
         jmp continue
+
     increment:
         inc rcx
 
