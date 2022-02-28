@@ -1,0 +1,4 @@
+**/*.o
+a.out
+libasm.so
+main.c
