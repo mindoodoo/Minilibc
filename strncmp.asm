@@ -24,6 +24,8 @@ loop:
     cmp rdx, rcx
     je retnull
 
+    jmp loop
+
 exit:
     sub al, bl
     ret
