@@ -4,18 +4,25 @@ section .text
 
 strrchr:
     mov rax, 0
-    mov rcx, 0
 
 loop:
-    cmp BYTE [rdi + rax], 0
+    cmp BYTE [rdi], sil
+    je cp
+    cmp BYTE [rdi], 0
     jz exit
-    cmp BYTE [rdi + rax], sil
-    jz cp
-    inc rcx
+    inc rdi
     jmp loop
 
 cp:
-    mov rax, [rdi + rax]
+    mov rax, rdi
+    inc rdi
+    jmp loop
 
 exit:
+    cmp sil, 0
+    je speexit
+    ret
+
+speexit:
+    mov rax, rdi
     ret
