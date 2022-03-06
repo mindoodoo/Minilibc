@@ -15,7 +15,8 @@ ASMSRC = strlen.asm \
 	memset.asm \
 	memcpy.asm \
 	strstr.asm \
-	strpbrk.asm
+	strpbrk.asm \
+	strcspn.asm
 
 NAME = libasm.so
 
